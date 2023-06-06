@@ -2,10 +2,12 @@
 
 ## Requirements
 
+ <br/>
 
 ## Training
+ <br/>
 
-- Training on 3 cell types
+**1. Training on 3 cell types**
   - Train model without co-accessibility component
   ```
   python script/train_bulkOnly.py --data-path ../data/processed_input/ -ct gm12878_hg38 umb_endo imr90
@@ -19,10 +21,12 @@
   python script/train_bulkOnly.py --data-path ../data/processed_input/ -ct gm12878_hg38 umb_endo imr90 --deterministic --mod-name deterministic
   ```
   
-  - Training on 1 cell type
-    - Train model on HUVEC without co-accessibility component
-    ```
-    python script/train_bulkOnly.py --data-path ../data/processed_input/ -ct umb_endo
-    ```
+ <br/>
+ 
+**2. Training on 1 cell type**
+  - Train model on HUVEC without co-accessibility component
+  ```
+  python script/train_bulkOnly.py --data-path ../data/processed_input/ -ct umb_endo
+  ```
 
 ## Inference
