@@ -85,10 +85,15 @@ def load_atac_eval(data_path, ct, pbulk_only=False):
     return bulk_atac_dict, sc_atac_dict
 
 
-def load_ctcf_motif(data_path, genome):
-    ctcf_dict = pickle.load(
-        open(os.path.join(data_path, "dna/{}_ctcf_motif_score.p".format(genome)), "rb")
-    )
+def load_ctcf_motif(data_path, genome, use_chip = False):
+    if not use_chip:
+        ctcf_dict = pickle.load(
+            open(os.path.join(data_path, "dna/{}_ctcf_motif_score.p".format(genome)), "rb")
+        )
+    else:
+        ctcf_dict = pickle.load(
+            open(os.path.join(data_path, "dna/{}_CTCF_50bp_dict.p".format(genome)), "rb")
+        )
     for chrom in ctcf_dict.keys():
         ctcf_dict[chrom] = ctcf_dict[chrom].T
 

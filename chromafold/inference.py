@@ -45,6 +45,7 @@ parser.add_argument(
 )
 parser.add_argument("-offset", default=0, type = int, help="Chromosome start index offset (bp). For training, we use 4,000,000 to skip over the low-signal regions. For testing, use 0 to start at 2Mb and ensure all regions have full input context for prediction. we can use -2,000,000 to make prediction starting from the beginning; input will be zero-padded in this case.")
 
+parser.add_argument("--use-ctcf-chip", action="store_true", help="Use CTCF ChIP seq data instead of motif score")
 parser.add_argument("--disable-cuda", action="store_true", help="Disable CUDA")
 parser.add_argument("--deterministic", action="store_true", help="cudnn deterministic")
 
@@ -82,6 +83,8 @@ def main():
     print("============================ Running ChromaFold ============================")
     print("\n-> Predicting Hi-C interactions in {}".format(ct))
     print("\n-> Using checkpoint {}".format(model_path))
+    if args.use_ctcf_chip:
+        print('\n-> Using CTCF ChIP seq data. Please make sure you are using the CTCF ChIP seq model.')
 
     test_chrom = args.test_chrom
 
@@ -108,7 +111,7 @@ def main():
     
     del pbulk_dict
 
-    ctcf_dict = load_ctcf_motif(data_path, genome)
+    ctcf_dict = load_ctcf_motif(data_path, genome, args.use_ctcf_chip)
 
     test_dataset = test_Dataset(
         input_size,
