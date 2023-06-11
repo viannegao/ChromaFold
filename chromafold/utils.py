@@ -4,6 +4,7 @@ import os
 import numpy as np
 import pandas as pd
 import scipy
+from scipy import sparse 
 import torch
 
 
@@ -24,9 +25,9 @@ def get_metacell_profile(sc_atac_dict, nbrs):
     metacell = nbrs
     for chrom in list(sc_atac_dict.keys()):
         metacell_sc_atac_dict[chrom] = (
-            scipy.sparse.csr_matrix(metacell) * sc_atac_dict[chrom]
+            sparse.csr_matrix(metacell) * sc_atac_dict[chrom]
         )
-        metacell_sc_atac_dict[chrom] = scipy.sparse.csr_matrix(
+        metacell_sc_atac_dict[chrom] = sparse.csr_matrix(
             metacell_sc_atac_dict[chrom].toarray().transpose()
         )
 
@@ -66,6 +67,10 @@ def load_atac_eval(data_path, ct, pbulk_only=False):
     bulk_atac_dict = pickle.load(
         open(os.path.join(data_path, "atac/{}_tile_pbulk_50bp_dict.p".format(ct)), "rb")
     )
+    
+    for chrom in bulk_atac_dict.keys():
+        bulk_atac_dict[chrom] = sparse.csr_matrix(bulk_atac_dict[chrom])
+        
     if pbulk_only:
         sc_atac_dict = None
     else:
@@ -121,7 +126,7 @@ def normalize_bulk_dict(pbulk_dict, effective_genome_size):
     for chrom in pbulk_dict.keys():
         y = pbulk_dict[chrom].toarray()
         y_t = y / scale_factor
-        normalized_pbulk_dict[chrom] = scipy.sparse.csr_matrix(y_t)
+        normalized_pbulk_dict[chrom] = sparse.csr_matrix(y_t)
     return normalized_pbulk_dict
 
 
