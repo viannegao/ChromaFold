@@ -1,8 +1,21 @@
 # ChromaFold
 
 ## Requirements
+ 
+- General
+  - python=3.8
+  - pytorch=1.11
+  - numpy=1.21
+  - pandas=1.4
+  - scipy=1.7
 
- <br/>
+
+- Visualization
+  - coolbox=0.3
+  - matplotlib=3.2
+  - seaborn=0.11
+  - tabix=1.11
+
 
 ## Training
  <br/>
