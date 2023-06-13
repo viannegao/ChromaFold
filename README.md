@@ -1,5 +1,12 @@
 # ChromaFold
 
+ChromaFold is a deep learning model that enables prediction of 3D contact maps from scATAC-seq data alone, by using pseudobulk chromatin accessibility and co-accessibility from scATAC-seq as well as predicted CTCF motif tracks as input features. 
+
+<img width="927" alt="model" src="https://github.com/viannegao/ChromaFold/assets/111778845/7eb5bdad-7547-4bc8-aab2-1db4df47ae1a">
+
+<br/>
+<br/>
+
 ## Requirements
  
 - General
@@ -17,6 +24,22 @@
   - tabix=1.11
 
 
+ <br/>
+
+## Inference
+ <br/>
+
+
+**1. Run inference on germinal center B cell with ChromaFold**
+  - Run inference on full chromosome without offset
+  ```
+  python script/inference.py --data-path ./data/processed_input/ -ct gcb --model-path ./checkpoint/chromafold_CTCFmotif.pth.tar -chrom 16 -offset -2000000 --genome mm10
+  ```
+  - Run inference only on regions with complete input information
+  ```
+  python script/inference.py --data-path ./data/processed_input/ -ct gcb --model-path ./checkpoint/chromafold_CTCFmotif.pth.tar -chrom 16 -offset 0 --genome mm10
+  ```
+  
 ## Training
  <br/>
 
@@ -42,16 +65,3 @@
   python script/train_bulkOnly.py --data-path ./data/processed_input/ -ct umb_endo
   ```
 
-## Inference
- <br/>
-
-
-**1. Run inference on germinal center B cell with ChromaFold**
-  - Run inference on full chromosome without offset
-  ```
-  python script/inference.py --data-path ./data/processed_input/ -ct gcb --model-path ./checkpoint/chromafold_CTCFmotif.pth.tar -chrom 16 -offset -2000000 --genome mm10
-  ```
-  - Run inference only on regions with complete input information
-  ```
-  python script/inference.py --data-path ./data/processed_input/ -ct gcb --model-path ./checkpoint/chromafold_CTCFmotif.pth.tar -chrom 16 -offset 0 --genome mm10
-  ```
