@@ -14,7 +14,7 @@ from utils import *
 from dataloader import *
 from model import *
 from testing import *
-from util_chrom_starts import *
+from util_chrom_start import *
 
 # DEVICE = 'cuda' if torch.cuda.is_available() else 'cpu'
 
