@@ -1,0 +1,28 @@
+Data preparation and inference for ChromaFold applications
+
+1. Daniel paper
+(a) All data prefixes for Daniel paper: 
+['daniel_chronic_d21_cx3cr1neg',
+ 'daniel_chronic_d21_tetpos',
+ 'daniel_chronic_d8_tetpos',
+ 'daniel_acute_d8_tetneg',
+ 'daniel_chronic_d21_cx3cr1neg_slamf6pos',
+ 'daniel_chronic_d21_tetneg',
+ 'daniel_acute_d8_tetpos',
+ 'daniel_chronic_d8_tetneg',
+ 'daniel_chronic_d21_cx3cr1pos',
+ 'daniel_chronic_d21_pd1pos_rep1',
+ 'daniel_chronic_d21_pd1pos_rep2']
+(b) Cell types: Effector, Effector2, Exh.EarlyEffector, Exh.Intermediate, Exh.Terminal
+
+2. Giles paper
+(a) All data prefixes for Giles paper: 
+    ['giles_acute_d8', 'giles_acute_d15', 'giles_acute_d30', 
+     'giles_chronic_d8', 'giles_chronic_d15', 'giles_chronic_d30', 
+     'giles_naive_d0']
+(b) Cell types: 
+            'Trans.CTL.I', 'Trans.Mem', 'Trans.CTL.II', 
+            'Effector', 'Eff-like.I', 'Eff-like.II', 
+            'Exh.Pre', 'Exh.Trans', 'Exh.Intermediate', 'Exh.KLR', 'Exh.Progenitor', 'Exh.Terminal', 
+            'Mem', 'Mem.CTL', 
+            'Naive', 'CTL', 'MP', 
