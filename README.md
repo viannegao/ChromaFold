@@ -30,6 +30,9 @@ conda env create -f chromafold.yml
  <br/>
 
 ## Preprocessing Data
+
+Sample raw and processed input data can be downloaded from https://drive.google.com/drive/folders/1p6dulb2z51NF_WA6RnAG4hHuUaKfFPrR?usp=sharing
+
   - Prepare Hi-C data for training
     
     - Run "process input/Process Input - Hi-C.ipynb". The juicer tools jar file can be downloaded from https://s3.amazonaws.com/hicfiles.tc4ga.com/public/juicer/juicer_tools_1.22.01.jar
