@@ -74,7 +74,9 @@ python /home/data/preprocessing_pipeline/scATAC_preparation.py \
 --save_path "${SAVE_LOC}"
 ```
 
-### **Data Check**
+**Complete!**
+
+### **Final Data Check**
 
 Until this step, we have all the input files ready for ChromaFold predictions. A complete data processing should have created 3 folders: 
 - `atac`: including `imr90_tile_50bp_barcode.npy`,`imr90_tile_50bp_dict.p`,`imr90_tile_500bp_barcode.npy`,`imr90_tile_500bp_dict.p`,`imr90_tile_pbulk_50bp_dict.p`
