@@ -39,6 +39,13 @@ bgzip "${FRAG_LOC}"/"${FRAG_FILE_PREFIX}_bgz_sorted.tsv" # bgzip file for tabix
 rm "${FRAG_LOC}"/"${FRAG_FILE_PREFIX}_bgz_sorted.tsv.gz.tbi" # remove previously calculated .tbi file
 rm "${FRAG_LOC}"/"${FRAG_FILE_PREFIX}_bgz.tsv.gz" # remove intermediate files
 ```
+#### Create folders to store ChromaFold input
+```
+cd "${SAVE_LOC}"
+mkdir -p atac
+mkdir -p dna
+mkdir -p predictions
+```
 #### Copy CTCF motif score to the designated folder 
 
 CTCF motif data for each genome assembly can be found at [google drive](https://drive.google.com/drive/folders/1TlfXGix2U-K1UIrOYv8gWGIiSx10dP3M?usp=sharing)
@@ -67,6 +74,14 @@ python /home/data/preprocessing_pipeline/scATAC_preparation.py \
 --save_path "${SAVE_LOC}"
 ```
 
+### **Data Check**
+
+Until this step, we have all the input files ready for ChromaFold predictions. A complete data processing should have created 3 folders: 
+- `atac`: including `imr90_tile_50bp_barcode.npy`,`imr90_tile_50bp_dict.p`,`imr90_tile_500bp_barcode.npy`,`imr90_tile_500bp_dict.p`,`imr90_tile_pbulk_50bp_dict.p`
+- `ctcf`: including CTCF motif data, `hg38_ctcf_motif_score.p`
+- `prediction`: where ChromaFold predictions will be saved in.
+
+An example data folder can be found at [google drive](https://drive.google.com/drive/folders/1ot0u8GDWvku9_XS7Cxk_QyYUyBQrAM32?usp=sharing)
 
 
 
