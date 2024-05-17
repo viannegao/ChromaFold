@@ -37,6 +37,8 @@ Sample raw and processed input data can be downloaded from https://drive.google.
     
     - Run "process input/Process Input - Hi-C.ipynb". The juicer tools jar file can be downloaded from https://s3.amazonaws.com/hicfiles.tc4ga.com/public/juicer/juicer_tools_1.22.01.jar
     - Example raw Hi-C file for IM9-90 can be downloaded from ENCODE (https://www.encodeproject.org/files/ENCFF843MZF/@@download/ENCFF843MZF.hic).
+   
+  - A more detailed pre-processing instruction can be found at [preprocessing_pipeline](https://github.com/viannegao/ChromaFold/tree/main/preprocessing_pipeline)
 
  <br/>
 
