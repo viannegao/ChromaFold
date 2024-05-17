@@ -23,7 +23,10 @@ ChromaFold is a deep learning model that enables prediction of 3D contact maps f
   - seaborn=0.11
   - tabix=1.11
 
-
+You can create a conda environment using the provided .yml file:
+```
+conda env create -f chromafold.yml
+```
  <br/>
 
 ## Preprocessing Data
