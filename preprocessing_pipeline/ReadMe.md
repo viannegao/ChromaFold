@@ -12,7 +12,8 @@ Filter and merge fragments of a specific cell type from multiple fragment datase
 ### **Step 1**. Run [ArchR](https://www.archrproject.com/bookdown/co-accessibility-with-archr.html) to calculate co-accessibility
 
 - **Input:** scATAC-seq fragment file from [google drive](https://drive.google.com/drive/folders/1ZDwumdoC-9lqsVEHUeBs4euN8xcBelhu?usp=sharing)
-- **Package:** [ArchR](https://www.archrproject.com/bookdown/co-accessibility-with-archr.html)
+- **Packages:** [ArchR](https://www.archrproject.com/bookdown/co-accessibility-with-archr.html) for creating co-accessibility matrix, [Samtools](https://www.htslib.org/) and [bedtools2](https://github.com/arq5x/bedtools2) for converting data format.
+- **Script:** [ArchR_preparation.R](https://github.com/viannegao/ChromaFold/blob/main/preprocessing_pipeline/ArchR_preparation.R)
 
 #### **Define arguments**
 ```
@@ -22,6 +23,63 @@ FRAG_LOC="/home/data/fragments_by_celltype"
 FRAG_FILE_PREFIX="${DATA_PREFIX}"
 GENOME_ASSEMBLY="hg38"
 ```
+#### **Convert fragments.tsv.gz file into sorted bgzip format**
+```
+mkdir -p /home/data/archr_data/"${DATA_PREFIX}"
+ARCHR_LOC=/home/data/archr_data/"${DATA_PREFIX}"
 
-#### **Define arguments**
+export PATH=/home/data/packages/samtools/bin:$PATH
+export PATH=/home/data/packages/samtools/samtools/bin:$PATH
+export PATH=/home/data/packages/bedtools2/bin:$PATH
+gunzip -c "${FRAG_LOC}"/"${FRAG_FILE_PREFIX}.tsv.gz" | bgzip  > "${FRAG_LOC}"/"${FRAG_FILE_PREFIX}_bgz.tsv.gz" # convert gzip to bgzip
+sortBed -i "${FRAG_LOC}"/"${FRAG_FILE_PREFIX}_bgz.tsv.gz" > "${FRAG_LOC}"/"${FRAG_FILE_PREFIX}_bgz_sorted.tsv" # sort merged bgzip file
+htsfile "${FRAG_LOC}"/"${FRAG_FILE_PREFIX}_bgz_sorted.tsv" # check whether file is in bed format
+bgzip "${FRAG_LOC}"/"${FRAG_FILE_PREFIX}_bgz_sorted.tsv" # bgzip file for tabix
+
+rm "${FRAG_LOC}"/"${FRAG_FILE_PREFIX}_bgz_sorted.tsv.gz.tbi" # remove previously calculated .tbi file
+rm "${FRAG_LOC}"/"${FRAG_FILE_PREFIX}_bgz.tsv.gz" # remove intermediate files
+```
+#### Copy CTCF motif score to the designated folder 
+
+CTCF motif data for each genome assembly can be found at [google drive](https://drive.google.com/drive/folders/1TlfXGix2U-K1UIrOYv8gWGIiSx10dP3M?usp=sharing)
+```
+cp /home/data/dna/* "${SAVE_LOC}"/dna/
+```
+#### Run R to create [LSI](https://www.archrproject.com/bookdown/iterative-latent-semantic-indexing-lsi.html) file using ArchR 
+```
+Rscript /home/data/preprocessing_pipeline/ArchR_preparation.R \
+"${DATA_PREFIX}" \
+"${ARCHR_LOC}" \
+"${FRAG_LOC}"/"${FRAG_FILE_PREFIX}_bgz_sorted.tsv.gz" \
+"${GENOME_ASSEMBLY}"
+```
+### **Step 2**. Calculate tile files using [ArchR](https://www.archrproject.com/bookdown/co-accessibility-with-archr.html)
+
+- **Input:** sorted bgzip fragment file created in previous step, LSI file created in previous step, and barcode file (example barcode file can be found in [google drive](https://drive.google.com/file/d/1rQRQtE8kRpdGAfT04mx2iUbvfvJcuHjW/view?usp=sharing))
+- **Script:** [scATAC_preparation.py](https://github.com/viannegao/ChromaFold/blob/main/preprocessing_pipeline/scATAC_preparation.py)
+```
+python /home/data/preprocessing_pipeline/scATAC_preparation.py \
+--cell_type_prefix "${DATA_PREFIX}" \
+--fragment_file  "${FRAG_LOC}"/"${FRAG_FILE_PREFIX}_bgz_sorted.tsv.gz" \
+--barcode_file "${ARCHR_LOC}"/archr_filtered_barcode.csv \
+--lsi_file "${ARCHR_LOC}"/archr_filtered_lsi.csv \
+--genome_assembly "${GENOME_ASSEMBLY}" \
+--save_path "${SAVE_LOC}"
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
