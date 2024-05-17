@@ -11,8 +11,17 @@ Filter and merge fragments of a specific cell type from multiple fragment datase
 
 ### **Step 1**. Run [ArchR](https://www.archrproject.com/bookdown/co-accessibility-with-archr.html) to calculate co-accessibility
 
-- **Input:** scATAC-seq fragment file
+- **Input:** scATAC-seq fragment file from [google drive](https://drive.google.com/drive/folders/1ZDwumdoC-9lqsVEHUeBs4euN8xcBelhu?usp=sharing)
 - **Package:** [ArchR](https://www.archrproject.com/bookdown/co-accessibility-with-archr.html)
 
+#### **Define arguments**
+```
+SAVE_LOC="/home/data"
+DATA_PREFIX="imr90_fragments"
+FRAG_LOC="/home/data/fragments_by_celltype"
+FRAG_FILE_PREFIX="${DATA_PREFIX}"
+GENOME_ASSEMBLY="hg38"
+```
 
+#### **Define arguments**
 
