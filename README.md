@@ -26,6 +26,12 @@ ChromaFold is a deep learning model that enables prediction of 3D contact maps f
 
  <br/>
 
+## Preprocessing Data
+  - Prepare Hi-C data for training
+  Run "process input/Process Input - Hi-C.ipynb". The juicer tools jar file can be downloaded from https://s3.amazonaws.com/hicfiles.tc4ga.com/public/juicer/juicer_tools_1.22.01.jar
+
+ <br/>
+
 ## Inference
  <br/>
 
