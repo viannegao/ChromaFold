@@ -13,7 +13,7 @@ Filter and merge fragments of a specific cell type from multiple fragment datase
 
 - **Input:** scATAC-seq fragment file from [google drive](https://drive.google.com/drive/folders/1ZDwumdoC-9lqsVEHUeBs4euN8xcBelhu?usp=sharing)
 - **Packages:** [ArchR](https://www.archrproject.com/bookdown/co-accessibility-with-archr.html) for creating co-accessibility matrix, [Samtools](https://www.htslib.org/) and [bedtools2](https://github.com/arq5x/bedtools2) for converting data format.
-- **Script:** [ArchR_preparation.R](https://github.com/viannegao/ChromaFold/blob/main/preprocessing_pipeline/ArchR_preparation.R)
+- **Script:** [`ArchR_preparation.R`](https://github.com/viannegao/ChromaFold/blob/main/preprocessing_pipeline/ArchR_preparation.R)
 
 #### **Define arguments**
 ```
@@ -63,7 +63,7 @@ Rscript /home/data/preprocessing_pipeline/ArchR_preparation.R \
 ### **Step 2**. Calculate tile files using [ArchR](https://www.archrproject.com/bookdown/co-accessibility-with-archr.html)
 
 - **Input:** sorted bgzip fragment file created in previous step, LSI file created in previous step, and barcode file (example barcode file can be found in [google drive](https://drive.google.com/file/d/1rQRQtE8kRpdGAfT04mx2iUbvfvJcuHjW/view?usp=sharing))
-- **Script:** [scATAC_preparation.py](https://github.com/viannegao/ChromaFold/blob/main/preprocessing_pipeline/scATAC_preparation.py)
+- **Script:** [`scATAC_preparation.py`](https://github.com/viannegao/ChromaFold/blob/main/preprocessing_pipeline/scATAC_preparation.py)
 ```
 python /home/data/preprocessing_pipeline/scATAC_preparation.py \
 --cell_type_prefix "${DATA_PREFIX}" \
