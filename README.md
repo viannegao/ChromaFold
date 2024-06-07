@@ -48,7 +48,7 @@ b) Target data preparation
 
   - Prepare Hi-C data for training
     
-    - Run "process input/Process Input - Hi-C.ipynb". The juicer tools jar file can be downloaded from https://s3.amazonaws.com/hicfiles.tc4ga.com/public/juicer/juicer_tools_1.22.01.jar . If the juicer tool doesn't match your java system, please refer to [earlier versions](https://github.com/aidenlab/juicer/wiki/Download) of the juicer tools. 
+    - Run "process input/Process Input - Hi-C.ipynb". The juicer tools jar file can be downloaded from https://s3.amazonaws.com/hicfiles.tc4ga.com/public/juicer/juicer_tools_1.22.01.jar . If the juicer tool doesn't match your java system, please refer to an [earlier versions](https://github.com/aidenlab/juicer/wiki/Download) of the juicer tools. 
     
    
 
