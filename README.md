@@ -29,7 +29,7 @@ conda env create -f chromafold.yml
 ```
  <br/>
 
-## Preprocessing Data
+## Data Preprocessing
 
 **Raw data preparation**
 
@@ -41,8 +41,8 @@ a) Input data preparation
 
 b) Target data preparation
 
-  - Example raw Hi-C file for IM9-90 can be downloaded from ENCODE (https://www.encodeproject.org/files/ENCFF843MZF/@@download/ENCFF843MZF.hic).
-  - Prepare normalized Hi-C library for target: please refer to the full instructions at [process input/hic_normalization]().
+  - Example raw Hi-C file for IMR-90 can be downloaded from ENCODE (https://www.encodeproject.org/files/ENCFF843MZF/@@download/ENCFF843MZF.hic).
+  - Prepare normalized Hi-C library for target: please refer to the full instructions at [process input/hic_normalization](https://github.com/viannegao/ChromaFold/tree/main/process%20input/hic_normalization).
 
 **Integration for training**
 
