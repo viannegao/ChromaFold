@@ -33,12 +33,18 @@ conda env create -f chromafold.yml
 
 Sample raw and processed input data can be downloaded from https://drive.google.com/drive/folders/1p6dulb2z51NF_WA6RnAG4hHuUaKfFPrR?usp=sharing
 
+**Raw data preparation**
+
+  - Prepare CTCF motif data: CTCF motif data are extracted from the [CTCF introduction](https://bioconductor.org/packages/release/data/annotation/vignettes/CTCF/inst/doc/CTCF.html) from R package [AnnotationHub](https://www.bioconductor.org/packages/release/bioc/html/AnnotationHub.html). R scripts for generating motif of hg38 and mm10 can be found at [process_input/ctcf_motif]()
+  - Prepare scATAC data for inference: please refer to the full instructions at [preprocessing_pipeline](https://github.com/viannegao/ChromaFold/tree/main/preprocessing_pipeline)
+
+**Integration for training**
+
   - Prepare Hi-C data for training
     
     - Run "process input/Process Input - Hi-C.ipynb". The juicer tools jar file can be downloaded from https://s3.amazonaws.com/hicfiles.tc4ga.com/public/juicer/juicer_tools_1.22.01.jar
     - Example raw Hi-C file for IM9-90 can be downloaded from ENCODE (https://www.encodeproject.org/files/ENCFF843MZF/@@download/ENCFF843MZF.hic).
    
-  - Prepare scATAC data for inference: please refer to the full instructions at [preprocessing_pipeline](https://github.com/viannegao/ChromaFold/tree/main/preprocessing_pipeline)
 
  <br/>
 
