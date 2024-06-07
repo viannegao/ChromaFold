@@ -42,16 +42,15 @@ a) Input data preparation
 b) Target data preparation
 
   - Example raw Hi-C file for IMR-90 can be downloaded from ENCODE (https://www.encodeproject.org/files/ENCFF843MZF/@@download/ENCFF843MZF.hic).
-  - Prepare normalized Hi-C library for target: please refer to the full instructions at [process input/hic_normalization](https://github.com/viannegao/ChromaFold/tree/main/process%20input/hic_normalization).
+  - Prepare normalized Hi-C library for target: please refer to the full instructions at [process input/hic_normalization](https://github.com/viannegao/ChromaFold/tree/main/process%20input/hic_normalization) (also shown below).
 
 **Integration for training**
 
   - Prepare Hi-C data for training
     
-    - Run "process input/Process Input - Hi-C.ipynb". The juicer tools jar file can be downloaded from https://s3.amazonaws.com/hicfiles.tc4ga.com/public/juicer/juicer_tools_1.22.01.jar . If the juicer tool doesn't match your java system, please refer to an [earlier versions](https://github.com/aidenlab/juicer/wiki/Download) of the juicer tools. 
+    - Run [process input/Process Input - Hi-C.ipynb](https://github.com/viannegao/ChromaFold/blob/main/process%20input/Process%20Input%20-%20Hi-C.ipynb). 
+    - The juicer tools jar file can be downloaded from https://s3.amazonaws.com/hicfiles.tc4ga.com/public/juicer/juicer_tools_1.22.01.jar . If the juicer tool doesn't match your java system, please refer to an [earlier versions](https://github.com/aidenlab/juicer/wiki/Download) of the juicer tools. 
     
-   
-
  <br/>
 
 ## Inference
