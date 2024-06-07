@@ -31,19 +31,25 @@ conda env create -f chromafold.yml
 
 ## Preprocessing Data
 
-Sample raw and processed input data can be downloaded from https://drive.google.com/drive/folders/1p6dulb2z51NF_WA6RnAG4hHuUaKfFPrR?usp=sharing
-
 **Raw data preparation**
 
-  - Prepare CTCF motif data: CTCF motif data are extracted from the [CTCF introduction](https://bioconductor.org/packages/release/data/annotation/vignettes/CTCF/inst/doc/CTCF.html) from R package [AnnotationHub](https://www.bioconductor.org/packages/release/bioc/html/AnnotationHub.html). R scripts for generating motif of hg38 and mm10 can be found at [process_input/ctcf_motif]()
-  - Prepare scATAC data for inference: please refer to the full instructions at [preprocessing_pipeline](https://github.com/viannegao/ChromaFold/tree/main/preprocessing_pipeline)
+Sample raw and processed input data can be downloaded from https://drive.google.com/drive/folders/1p6dulb2z51NF_WA6RnAG4hHuUaKfFPrR?usp=sharing
+
+a) Input data preparation
+  - Prepare CTCF motif data: CTCF motif data are extracted from the [CTCF introduction](https://bioconductor.org/packages/release/data/annotation/vignettes/CTCF/inst/doc/CTCF.html) from R package [AnnotationHub](https://www.bioconductor.org/packages/release/bioc/html/AnnotationHub.html). R scripts for generating motif of hg38 and mm10 can be found at [process_input/ctcf_motif](https://github.com/viannegao/ChromaFold/tree/main/process%20input/ctcf_motif). We also provide ready-to-use CTCF motif score for hg38, hg19, mm10 in the [google drive](https://drive.google.com/drive/folders/1TlfXGix2U-K1UIrOYv8gWGIiSx10dP3M).
+  - Prepare scATAC data for inference: please refer to the full instructions at [preprocessing_pipeline](https://github.com/viannegao/ChromaFold/tree/main/preprocessing_pipeline).
+
+b) Target data preparation
+
+  - Example raw Hi-C file for IM9-90 can be downloaded from ENCODE (https://www.encodeproject.org/files/ENCFF843MZF/@@download/ENCFF843MZF.hic).
+  - Prepare normalized Hi-C library for target: please refer to the full instructions at [process input/hic_normalization]().
 
 **Integration for training**
 
   - Prepare Hi-C data for training
     
-    - Run "process input/Process Input - Hi-C.ipynb". The juicer tools jar file can be downloaded from https://s3.amazonaws.com/hicfiles.tc4ga.com/public/juicer/juicer_tools_1.22.01.jar
-    - Example raw Hi-C file for IM9-90 can be downloaded from ENCODE (https://www.encodeproject.org/files/ENCFF843MZF/@@download/ENCFF843MZF.hic).
+    - Run "process input/Process Input - Hi-C.ipynb". The juicer tools jar file can be downloaded from https://s3.amazonaws.com/hicfiles.tc4ga.com/public/juicer/juicer_tools_1.22.01.jar . If the juicer tool doesn't match your java system, please refer to [earlier versions](https://github.com/aidenlab/juicer/wiki/Download) of the juicer tools. 
+    
    
 
  <br/>
