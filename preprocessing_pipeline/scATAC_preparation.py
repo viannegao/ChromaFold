@@ -4,9 +4,7 @@
 
 Usage example: 
 screen
-# bsub -n 2 -W 4:00 -R 'span[hosts=1] rusage[mem=512]' -Is /bin/bash
-bsub -q gpuqueue -gpu - -W 4:00 -n 2 -R 'span[hosts=1] rusage[mem=128]' -Is /bin/bash
-source /home/yangr2/dnabert_environment/bin/activate
+
 python chromafold/scripts/scATAC_preparation.py \
 --cell_type_prefix cell_type_prefix \
 --fragment_file /data/merged_fragments.tsv.gz \
