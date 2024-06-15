@@ -5,9 +5,9 @@
 # Usage
 # screen
 # bsub -n 2 -W 10:00 -R 'span[hosts=1] rusage[mem=64]' -Is /bin/bash
-# source /home/yangr2/miniconda3/etc/profile.d/conda.sh
+# source /miniconda3/etc/profile.d/conda.sh
 # conda activate chromafold_environment
-# cd /data/leslie/yangr2/chromafold/scripts
+# cd /chromafold/scripts
 #
 #
 # Rscript /chromafold/process input/hic_normalization/hicdcplus_run.R \
