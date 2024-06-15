@@ -7,13 +7,13 @@ screen
 # bsub -n 2 -W 4:00 -R 'span[hosts=1] rusage[mem=512]' -Is /bin/bash
 bsub -q gpuqueue -gpu - -W 4:00 -n 2 -R 'span[hosts=1] rusage[mem=128]' -Is /bin/bash
 source /home/yangr2/dnabert_environment/bin/activate
-python /lila/data/leslie/yangr2/chromafold/scripts/scATAC_preparation.py \
---cell_type_prefix daniel_acute_d8_Effector \
---fragment_file /data/leslie/tyler/data/daniel-2022/acute-d8-tetpos/outs/fragments.tsv.gz \
---barcode_file /data/leslie/yangr2/chromafold/data/test_input/archr_data/archr_filtered_barcode.csv \
---lsi_file /data/leslie/yangr2/chromafold/data/test_input/archr_data/archr_filtered_lsi.csv \
+python chromafold/scripts/scATAC_preparation.py \
+--cell_type_prefix cell_type_prefix \
+--fragment_file /data/merged_fragments.tsv.gz \
+--barcode_file /data/archr_data/archr_filtered_barcode.csv \
+--lsi_file /data/archr_data/archr_filtered_lsi.csv \
 --genome_assembly "mm10" \
---save_path /data/leslie/yangr2/chromafold/data/test_input/atac_data 
+--save_path /data/atac_data 
 
 '''
 
