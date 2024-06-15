@@ -4,17 +4,13 @@
 
 Usage example: 
 screen
-bsub -n 2 -W 4:00 -R 'span[hosts=1] rusage[mem=256]' -Is /bin/bash
-# bsub -q gpuqueue -gpu - -W 4:00 -n 2 -R 'span[hosts=1] rusage[mem=128]' -Is /bin/bash
-source /home/yangr2/dnabert_environment/bin/activate
 
-#Effector, Exh.EarlyEffector, Exh.Intermediate, Exh.Terminal
-python /lila/data/leslie/yangr2/chromafold/scripts/fragment_celltype_merge.py \
---cell_type Exh.EarlyEffector \
---fragment_list /data/leslie/tyler/data/daniel-2022/acute-d8-tetpos/outs/fragments.tsv.gz /data/leslie/tyler/data/daniel-2022/acute-d8-tetneg/outs/fragments.tsv.gz \
---data_prefix_list "daniel_chronic_d8_tetpos" "daniel_chronic_d8_tetneg" \
---save_name /data/leslie/yangr2/chromafold/data/daniel_paper/fragments_by_celltype/mm10_daniel_acute_exhearly_fragments.tsv.gz \
---cell_type_file /data/leslie/tyler/t-cell-exhaustion/cellspace-experiments3/arrow-daniel/cell-md-from-paper/cell-md.csv \
+python /chromafold/scripts/fragment_celltype_merge.py \
+--cell_type selected_cell_type \
+--fragment_list /data/fragments_1.tsv.gz /data/fragments_2.tsv.gz \
+--data_prefix_list "data_prefix" \
+--save_name /data/merged_fragments.tsv.gz \
+--cell_type_file /data/cell_type_file.csv \
 --genome_assembly mm10
 
 '''

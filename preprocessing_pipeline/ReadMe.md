@@ -79,7 +79,7 @@ python /home/data/preprocessing_pipeline/scATAC_preparation.py \
 ### **Final Data Check**
 
 Until this step, we have all the input files ready for ChromaFold predictions. A complete data processing should have created 3 folders: 
-- `atac`: including `imr90_tile_50bp_barcode.npy`,`imr90_tile_50bp_dict.p`,`imr90_tile_500bp_barcode.npy`,`imr90_tile_500bp_dict.p`,`imr90_tile_pbulk_50bp_dict.p`
+- `atac`: including `imr90_tile_50bp_barcode.npy`,`imr90_tile_50bp_dict.p`,`imr90_tile_500bp_barcode.npy`,`imr90_tile_500bp_dict.p`,`imr90_tile_pbulk_50bp_dict.p`, `metacell_mask.csv`
 - `ctcf`: including CTCF motif data, `hg38_ctcf_motif_score.p`
 - `prediction`: where ChromaFold predictions will be saved in.
 

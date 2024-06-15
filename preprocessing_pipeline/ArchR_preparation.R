@@ -13,16 +13,14 @@
 #
 # Usage
 # screen
-# bsub -n 2 -W 10:00 -R 'span[hosts=1] rusage[mem=64]' -Is /bin/bash
-# bsub -q gpuqueue -gpu - -W 4:00 -n 2 -R 'span[hosts=1] rusage[mem=128]' -Is /bin/bash #or using gpu # nolint
-# source /home/yangr2/miniconda3/etc/profile.d/conda.sh
+# source /miniconda3/etc/profile.d/conda.sh
 # conda activate chromafold_environment
-# cd /data/leslie/yangr2/chromafold/scripts
+# cd /chromafold/scripts
 #
-# Rscript /data/leslie/yangr2/chromafold/scripts/ArchR_preparation.R \
-# "daniel_acute_d8_tetpos" \
-# "/data/leslie/yangr2/chromafold/data/test_input/archr_data" \
-# "/data/leslie/tyler/data/daniel-2022/acute-d8-tetpos/outs/fragments.tsv.gz" \
+# Rscript /chromafold/scripts/ArchR_preparation.R \
+# "name_prefix" \
+# "/chromafold/data/test_input/archr_data" \
+# "/fragments.tsv.gz" \
 # "mm10"
 
 
@@ -41,9 +39,6 @@ archr_path <- args[2]
 input_path <- args[3]
 genome_assembly <- args[4]
 
-# sample_name <- "daniel_acute_d8_tetpos"  # nolint
-# archr_path <- "/data/leslie/yangr2/chromafold/data/test_input/archr_data"  # nolint
-# input_path <- "/data/leslie/tyler/data/daniel-2022/acute-d8-tetpos/outs/fragments.tsv.gz" # nolint
 setwd(archr_path)
 
 #2. Hyper-parameters
