@@ -55,7 +55,7 @@ GENOME_ASSEMBLY = config['genome_assembly']
 LSI_PATH = config['lsi_file']
 SAVE_PATH = config['save_path']
 
-chrom_size = pd.read_csv(f'/home/yangr2/assembly/{GENOME_ASSEMBLY}.chrom.sizes', 
+chrom_size = pd.read_csv(f'/assembly/{GENOME_ASSEMBLY}.chrom.sizes', #downloaded from UCSC
                          sep = '\t', header = None, index_col = 0)
 valid_chrom = ['chr1', 'chr2', 'chr3', 'chr4', 'chr5','chr6','chr7',
                'chr8', 'chr9','chr10','chr11','chr12','chr13','chr14',
@@ -193,7 +193,7 @@ def main():
     LSI_PATH = config['lsi_file']
     SAVE_PATH = config['save_path']
 
-    chrom_size = pd.read_csv(f'/home/yangr2/assembly/{GENOME_ASSEMBLY}.chrom.sizes', 
+    chrom_size = pd.read_csv(f'/assembly/{GENOME_ASSEMBLY}.chrom.sizes', 
                          sep = '\t', header = None, index_col = 0)
     
     _ = atac_processing(frag_path = FRAG_FILE, nrows_skip = 0, 
