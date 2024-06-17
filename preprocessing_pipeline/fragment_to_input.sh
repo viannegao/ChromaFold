@@ -73,7 +73,7 @@ cp /dna/* "${SAVE_LOC}"/dna/
 
 # Run R to create LSI file using ArchR 
 source /miniconda3/etc/profile.d/conda.sh # load conda
-conda activate /environment/chromafold_environment # activate conda environment for R
+conda activate /environment/chromafold_env # activate conda environment for R
 cd /chromafold/scripts 
 
 Rscript /chromafold/scripts/pipeline/ArchR_preparation.R \

@@ -6,7 +6,7 @@
 # screen
 # bsub -n 2 -W 10:00 -R 'span[hosts=1] rusage[mem=64]' -Is /bin/bash
 # source /miniconda3/etc/profile.d/conda.sh
-# conda activate chromafold_environment
+# conda activate chromafold_env
 # cd /chromafold/scripts
 #
 #

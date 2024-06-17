@@ -14,7 +14,7 @@
 # Usage
 # screen
 # source /miniconda3/etc/profile.d/conda.sh
-# conda activate chromafold_environment
+# conda activate chromafold_env
 # cd /chromafold/scripts
 #
 # Rscript /chromafold/scripts/ArchR_preparation.R \
