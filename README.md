@@ -16,17 +16,21 @@ ChromaFold is a deep learning model that enables prediction of 3D contact maps f
   - pandas=1.4
   - scipy=1.7
 
-
 - Visualization
   - coolbox=0.3
   - matplotlib=3.2
   - seaborn=0.11
   - tabix=1.11
 
+- R 
+
 You can create a conda environment using the provided .yml file:
 ```
 conda env create -f chromafold.yml
 ```
+
+For using `ArchR` from `R`, you can install `R` from `conda` with necessary packages following the script `R_env.sh`.
+
  <br/>
 
 ## Data Preprocessing

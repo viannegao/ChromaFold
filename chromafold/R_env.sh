@@ -26,8 +26,12 @@ conda install -c r r-essentials
 #3. going into R, and install packages
 # https://github.com/GreenleafLab/ArchR
 
+R
+
 install.packages("Rcpp", dependencies = TRUE)
 install.packages('git2r')
+
+q()
 
 # exit R, in bash: https://github.com/r-lib/gert/issues/140 
 conda install conda-forge::r-rcpp
