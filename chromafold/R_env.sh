@@ -1,7 +1,8 @@
 #/bin/bash
 
+mkdir -p /chromafold/packages
 cd /chromafold/packages
-/miniconda3/condabin/conda install -c r r-base
+# /miniconda3/condabin/conda install -c r r-base
 
 #1. Create conda environment 
 cd /chromafold/packages
