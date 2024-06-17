@@ -11,7 +11,6 @@ cd /chromafold/packages
 # make && make install
 # export PATH=/chromafold/packages/R-3.6.3/bin:$PATH
 
-
 #1. Create conda environment 
 cd /chromafold/packages
 /miniconda3/bin/conda create -n chromafold_env
