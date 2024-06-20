@@ -1,8 +1,8 @@
-## Hi-C normalization 
+# Hi-C normalization 
 
 This page is for preparing [HiC-DC+](https://github.com/mervesa/HiCDCPlus) normalized Hi-C libraries for training. 
 
-#################### Preprocessing with HiC-DC+ installation (RECOMMENDED) ####################
+## Preprocessing with HiC-DC+ installation **(RECOMMENDED)**
 
 Hi-C libraries are normalized with [HiC-DC+](https://github.com/mervesa/HiCDCPlus). 
 
@@ -17,7 +17,7 @@ hic_file='./imr90.hic' resolution=10000 assembly='hg38' /chromafold/process_inpu
 ```
 
 
-#################### Preprocessing without HiC-DC+ installation ####################
+## Preprocessing without HiC-DC+ installation
 
 If you have difficulties installing HiC-DC+ in the R environment, below is the alternative approach for Hi-C normalization. 
 
