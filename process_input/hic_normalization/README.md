@@ -16,6 +16,11 @@ cd ./data
 hic_file='./imr90.hic' resolution=10000 assembly='hg38' /chromafold/process_input/hic_normalization/hicdcplus/hicdcplus_normalization.sh
 ```
 
+This script consists of two steps:
+- Step 1. use HiC-DC+ to normalize the `.hic` file and generate z-value normalized counts.
+- Step 2. convert results format and save normalized values into `pickle` file for training. 
+
+After running the scripts, the normalized Hi-C library will be saved as `/data/hicdc_normalization/zvalue/normalized_hic_zscore_dict.p`.
 
 ## Preprocessing without HiC-DC+ installation
 
