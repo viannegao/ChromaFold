@@ -2,6 +2,25 @@
 
 This page is for preparing [HiC-DC+](https://github.com/mervesa/HiCDCPlus) normalized Hi-C libraries for training. 
 
+#################### Preprocessing with HiC-DC+ installation (RECOMMENDED) ####################
+
+Hi-C libraries are normalized with [HiC-DC+](https://github.com/mervesa/HiCDCPlus). 
+
+Run the command to normalize your `.hic` file:
+- set `hic_file` as your `.hic` file path
+- set `resolution` as the Hi-C resolution
+- set `assembly` as the genome assembly of the Hi-C. Choices are `hg19` or `hg38` for `Hsapiens`, and `mm9` or `mm10` for `Mmusculus`. 
+
+```
+cd ./data
+hic_file='./imr90.hic' resolution=10000 assembly='hg38' /chromafold/process_input/hic_normalization/hicdcplus/hicdcplus_normalization.sh
+```
+
+
+#################### Preprocessing without HiC-DC+ installation ####################
+
+If you have difficulties installing HiC-DC+ in the R environment, below is the alternative approach for Hi-C normalization. 
+
 ### **Step 1**. Generate HiC-DC+ normalized z-score files
 
 - **Input:** HiC-DC+ requires assembly and resolution specific feature files for regression. Ready-to-use genomic features have been uploaded to [feature files](https://drive.google.com/drive/folders/1084P15MIrYeS13_ynpx2fbu11HTDszOt?usp=sharing). Please download them for normalization. 
@@ -9,7 +28,7 @@ This page is for preparing [HiC-DC+](https://github.com/mervesa/HiCDCPlus) norma
 - **Script:** [`hicdcplus_run.R`](https://github.com/viannegao/ChromaFold/blob/main/process%20input/hic_normalization/hicdcplus_run.R)
 
 ```
-Rscript /chromafold/process input/hic_normalization/hicdcplus_run.R \
+Rscript /chromafold/process_input/hic_normalization/without_installation/hicdcplus_run.R \
 10000 \
 "/scripts/hicdc_workflow/hg38_MboI_10kb_features.rds" \
 "/data/HiC/imr90/hicdc_out/" \

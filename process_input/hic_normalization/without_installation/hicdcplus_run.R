@@ -21,8 +21,8 @@
 # "/scripts/hicdc_workflow/juicer_tools.1.9.9_jcuda.0.8.jar" \
 
 
-source("~/scripts/hic_normalization/hicdcplus_pipeline.R")
-setwd("~/scripts/hicdc_workflow/")
+source("~/scripts/hic_normalization/without_installation/hicdcplus_pipeline.R")
+setwd("~/scripts/hicdc_workflow/without_installation/")
 
 args <- commandArgs(trailing = TRUE)
 
