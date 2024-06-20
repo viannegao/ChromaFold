@@ -47,7 +47,7 @@ a) Input data preparation
 b) Target data preparation
 
   - Example raw Hi-C file for IMR-90 can be downloaded from ENCODE (https://www.encodeproject.org/files/ENCFF843MZF/@@download/ENCFF843MZF.hic).
-  - Prepare normalized Hi-C library for target: please refer to the full instructions at [process input/hic_normalization](https://github.com/viannegao/ChromaFold/tree/main/process%20input/hic_normalization) (also shown below).
+  - Prepare normalized Hi-C library for target: please refer to the full instructions at [process input/hic_normalization](https://github.com/viannegao/ChromaFold/tree/main/process_input/hic_normalization) (also shown below).
 
 **Integration for training**
 
