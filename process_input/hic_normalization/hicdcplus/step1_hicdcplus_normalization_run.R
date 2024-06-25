@@ -39,7 +39,7 @@ if (assembly %in% c("mm9", "mm10")) {
 }
 
 outdir <- "./features/"
-outpth <- "./intermediate"
+outpth <- "./intermediate/"
 
 ########################################
 #      Step 1. Construct features      #
