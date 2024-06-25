@@ -69,7 +69,7 @@ valid_chrom = [i for i in valid_chrom if i in chrom_size.index.to_list()]
 #########################
 
 def atac_processing(frag_path, nrows_skip, valid_barcode_path,
-                    save_path, cell_type_prefix):
+                    save_path, cell_type_prefix, valid_chrom = valid_chrom):
     #1. read fragment file and filter for valid cell barcode
     frag = pd.read_csv(frag_path, sep = '\t', header=None, skiprows = nrows_skip)
     dist = frag[2]-frag[1]
@@ -154,11 +154,9 @@ def generate_cicero_metacell(nbrs, max_overlap, sampled_id = [0]):
     order = np.arange(nbrs.shape[0])
     np.random.seed(10)
     np.random.shuffle(order)
-
     selected_idx = [False]*nbrs.shape[0]
     for i in sampled_id:
         selected_idx[i] = True
-    
     for idx in order:
         selected_cells = nbrs[selected_idx]
         candidate = nbrs[idx]

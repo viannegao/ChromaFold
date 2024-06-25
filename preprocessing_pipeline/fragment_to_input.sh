@@ -66,6 +66,9 @@ cd "${SAVE_LOC}"
 mkdir -p atac
 mkdir -p dna
 mkdir -p predictions
+mkdir -p assembly
+wget 
+
 
 # Copy CTCF motif score to the designated folder
 # CTCF motif can be downloaded from google drive: https://drive.google.com/drive/folders/1TlfXGix2U-K1UIrOYv8gWGIiSx10dP3M?usp=sharing
