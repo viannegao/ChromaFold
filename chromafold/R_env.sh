@@ -52,3 +52,9 @@ devtools::install_github("GreenleafLab/ArchR", ref="master", repos = BiocManager
 
 library(ArchR)
 ArchR::installExtraPackages()
+
+# If you need to run HiC-DC+, install here:
+
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+BiocManager::install("HiCDCPlus")

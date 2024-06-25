@@ -23,13 +23,22 @@ cd ./hicdc_normalization
 
 #1. Step 1. Use HiC-DC+ to calculate normalization
 
+# Usage
+# screen
+source /miniconda3/etc/profile.d/conda.sh
+conda activate chromafold_env
+cd /chromafold/scripts
+
 Rscript /chromafold/process_input/hic_normalization/hicdcplus/step1_hicdcplus_normalization_run.R \
 "$hic_file" \
 "$resolution" \
 "$assembly"
 
+conda deactivate
+
 #2. Convert calculated z-values to input Hi-C format 
 
+conda activate cuda111_torch
 python /chromafold/process_input/hic_normalization/hicdcplus/step2_python_save.py \
 --assembly "$assembly"
 
