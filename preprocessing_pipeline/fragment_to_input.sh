@@ -67,7 +67,10 @@ mkdir -p atac
 mkdir -p dna
 mkdir -p predictions
 mkdir -p assembly
-wget 
+wget -P assembly https://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/hg38.chrom.sizes
+wget -P assembly https://hgdownload.soe.ucsc.edu/goldenPath/hg19/bigZips/hg19.chrom.sizes
+wget -P assembly https://hgdownload.soe.ucsc.edu/goldenPath/mm10/bigZips/mm10.chrom.sizes
+wget -P assembly https://hgdownload.soe.ucsc.edu/goldenPath/mm9/bigZips/mm9.chrom.sizes
 
 
 # Copy CTCF motif score to the designated folder
