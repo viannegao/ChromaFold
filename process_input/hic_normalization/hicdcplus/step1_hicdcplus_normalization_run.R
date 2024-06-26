@@ -22,7 +22,7 @@ args <- commandArgs(trailing = TRUE)
 
 #1. Initial set-up
 hicfile_path <- args[1] #location of the raw .hic file to be normalized
-resolution <- args[2] #resolution of Hi-C
+resolution <- as.integer(args[2]) #resolution of Hi-C
 assembly <- args[3]
 
 #2. Variable set-ups
@@ -59,7 +59,8 @@ set.seed(1010)
 #generate gi_list instance
 gi_list <- generate_bintolen_gi_list(
   bintolen_path = paste0(outdir, "/", assembly,
-  "_", as.integer(resolution / 1000), "kb_GATC_GANTC_bintolen.txt.gz"))
+  "_", as.integer(resolution / 1000), "kb_GATC_GANTC_bintolen.txt.gz"),
+  gen = species, gen_ver = assembly)
 #add .hic counts
 gi_list <- add_hic_counts(gi_list, hic_path = hicfile_path, chrs = names(gi_list)) #nolint
 

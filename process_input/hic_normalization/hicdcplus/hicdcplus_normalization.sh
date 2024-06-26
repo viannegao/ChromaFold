@@ -6,6 +6,8 @@
 # resolution=10000
 # assembly='hg38'
 
+SCRIPT_DIR="/chromafold/process_input/hic_normalization/hicdcplus"
+
 # Ensure required variables are set
 if [ -z "$hic_file" ] || [ -z "$resolution" ] || [ -z "$assembly" ]; then
   echo "Error: Missing required environment variables."
@@ -29,17 +31,19 @@ source /miniconda3/etc/profile.d/conda.sh
 conda activate chromafold_env
 cd /chromafold/scripts
 
-Rscript /chromafold/process_input/hic_normalization/hicdcplus/step1_hicdcplus_normalization_run.R \
+Rscript "${SCRIPT_DIR}"/step1_hicdcplus_normalization_run.R \
 "$hic_file" \
 "$resolution" \
 "$assembly"
 
+# exit from R env
 conda deactivate
 
 #2. Convert calculated z-values to input Hi-C format 
 
+# load python env
 conda activate cuda111_torch
-python /chromafold/process_input/hic_normalization/hicdcplus/step2_python_save.py \
+python "${SCRIPT_DIR}"/step2_python_save.py \
 --assembly "$assembly"
 
 #3. Normalized .p file should be saaved into ./hicdc_normalization/zvalue

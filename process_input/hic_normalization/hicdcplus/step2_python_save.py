@@ -22,14 +22,14 @@ parser.add_argument("--assembly", help="Assembly of the Hi-C library.",
 args = parser.parse_args()
 config = vars(args)
 print(config)
-ASSEMBLY = config['save_path']
+ASSEMBLY = config['assembly']
 
 def main():
 
     args = parser.parse_args()
     config = vars(args)
     print(config)
-    ASSEMBLY = config['save_path']
+    ASSEMBLY = config['assembly']
 
     PTH = './intermediate'
     SAVE_PTH = './zvalue_intermediate'
