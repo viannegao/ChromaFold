@@ -112,6 +112,7 @@ dependencies:
   - pygments=2.11.2=pyhd3eb1b0_0
   - pyopenssl=22.0.0=pyhd3eb1b0_0
   - pyparsing=3.0.4=pyhd3eb1b0_0
+  - pysam
   - pysocks=1.7.1=py38h06a4308_0
   - python=3.8.12=h12debd9_0
   - python-dateutil=2.8.2=pyhd3eb1b0_0
