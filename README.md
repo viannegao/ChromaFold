@@ -43,6 +43,7 @@ Sample raw and processed input data can be downloaded from https://drive.google.
 a) Input data preparation
   - Prepare CTCF motif data: CTCF motif data are extracted from the [CTCF introduction](https://bioconductor.org/packages/release/data/annotation/vignettes/CTCF/inst/doc/CTCF.html) from R package [AnnotationHub](https://www.bioconductor.org/packages/release/bioc/html/AnnotationHub.html). R scripts for generating motif of hg38 and mm10 can be found at [process_input/ctcf_motif](https://github.com/viannegao/ChromaFold/tree/main/process%20input/ctcf_motif). We also provide ready-to-use CTCF motif score for hg38, hg19, mm10 in the [google drive](https://drive.google.com/drive/folders/1TlfXGix2U-K1UIrOYv8gWGIiSx10dP3M).
   - Prepare scATAC data for inference: please refer to the full instructions at [preprocessing_pipeline](https://github.com/viannegao/ChromaFold/tree/main/preprocessing_pipeline).
+  - A toy processed input folder can be found at [data_subset](https://github.com/viannegao/ChromaFold/tree/main/data_subset) which contains only chr19. A full version of processed input files can be found in the [google drive](https://drive.google.com/drive/folders/1ot0u8GDWvku9_XS7Cxk_QyYUyBQrAM32?usp=sharing).
 
 b) Target data preparation
 
