@@ -67,11 +67,11 @@ b) Target data preparation
 **1. Run inference on germinal center B cell with ChromaFold**
   - Run inference on full chromosome without offset
   ```
-  python ./chromafold/inference.py --data-path ./data/processed_input/ -ct gcb --model-path ./checkpoints/chromafold_CTCFmotif.pth.tar -chrom 16 -offset -2000000 --genome hg38 -ct imr90
+  python ./chromafold/inference.py --data-path ./data/processed_input/ -ct gcb --model-path ./checkpoints/chromafold_CTCFmotif.pth.tar -chrom 19 -offset -2000000 --genome hg38 -ct imr90
   ```
   - Run inference only on regions with complete input information
   ```
-  python ./chromafold/inference.py --data-path ./data/processed_input/ -ct gcb --model-path ./checkpoints/chromafold_CTCFmotif.pth.tar -chrom 16 -offset 0 --genome hg38 -ct imr90
+  python ./chromafold/inference.py --data-path ./data/processed_input/ -ct gcb --model-path ./checkpoints/chromafold_CTCFmotif.pth.tar -chrom 19 -offset 0 --genome hg38 -ct imr90
   ```
   
 ## Training
