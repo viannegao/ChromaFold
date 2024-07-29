@@ -49,12 +49,13 @@ b) Target data preparation
 
   - Example raw Hi-C file for IMR-90 can be downloaded from ENCODE (https://www.encodeproject.org/files/ENCFF843MZF/@@download/ENCFF843MZF.hic).
   - Prepare normalized Hi-C library for target: please refer to the full instructions at [process input/hic_normalization](https://github.com/viannegao/ChromaFold/tree/main/process_input/hic_normalization) (also shown below).
+  - HiCDC+ normalized training target for IMR-90 is available at [google drive](https://drive.google.com/drive/folders/1Q4s29V8649s9sf8rHWBzG6NqQQvXgZKO?usp=sharing).
 
 **Integration for training**
 
   - Prepare Hi-C data for training
     
-    - Run [process input/Process Input - Hi-C.ipynb](https://github.com/viannegao/ChromaFold/blob/main/process%20input/Process%20Input%20-%20Hi-C.ipynb). 
+    - Run [process input/Process Input - Hi-C.ipynb](https://github.com/viannegao/ChromaFold/blob/main/process_input/Process%20Input%20-%20Hi-C.ipynb). 
     - The juicer tools jar file can be downloaded from https://s3.amazonaws.com/hicfiles.tc4ga.com/public/juicer/juicer_tools_1.22.01.jar . If the juicer tool doesn't match your java system, please refer to an [earlier versions](https://github.com/aidenlab/juicer/wiki/Download) of the juicer tools. 
     
  <br/>
@@ -66,11 +67,11 @@ b) Target data preparation
 **1. Run inference on germinal center B cell with ChromaFold**
   - Run inference on full chromosome without offset
   ```
-  python script/inference.py --data-path ./data/processed_input/ -ct gcb --model-path ./checkpoint/chromafold_CTCFmotif.pth.tar -chrom 16 -offset -2000000 --genome mm10
+  python ./chromafold/inference.py --data-path ./data/processed_input/ -ct gcb --model-path ./checkpoints/chromafold_CTCFmotif.pth.tar -chrom 16 -offset -2000000 --genome hg38 -ct imr90
   ```
   - Run inference only on regions with complete input information
   ```
-  python script/inference.py --data-path ./data/processed_input/ -ct gcb --model-path ./checkpoint/chromafold_CTCFmotif.pth.tar -chrom 16 -offset 0 --genome mm10
+  python ./chromafold/inference.py --data-path ./data/processed_input/ -ct gcb --model-path ./checkpoints/chromafold_CTCFmotif.pth.tar -chrom 16 -offset 0 --genome hg38 -ct imr90
   ```
   
 ## Training
