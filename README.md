@@ -49,7 +49,7 @@ b) Target data preparation
 
   - Example raw Hi-C file for IMR-90 can be downloaded from ENCODE (https://www.encodeproject.org/files/ENCFF843MZF/@@download/ENCFF843MZF.hic).
   - Prepare normalized Hi-C library for target: please refer to the full instructions at [process input/hic_normalization](https://github.com/viannegao/ChromaFold/tree/main/process_input/hic_normalization) (also shown below).
-  - HiCDC+ normalized training target for IMR-90 (all chromosomes) is available at [google drive](https://drive.google.com/drive/folders/1Q4s29V8649s9sf8rHWBzG6NqQQvXgZKO?usp=sharing).
+  - HiCDC+ normalized training target for IMR-90 (all chromosomes) is available at [google drive](https://drive.google.com/drive/folders/1Q4s29V8649s9sf8rHWBzG6NqQQvXgZKO?usp=sharing), and a subset of chr19 is available at [data_subset](https://github.com/viannegao/ChromaFold/tree/main/data_subset).
 
 **Integration for training**
 
