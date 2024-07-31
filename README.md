@@ -67,11 +67,11 @@ b) Target data preparation
 **1. Run inference on germinal center B cell with ChromaFold**
   - Run inference on full chromosome without offset
   ```
-  python ./chromafold/inference.py --data-path ./data/processed_input/ -ct gcb --model-path ./checkpoints/chromafold_CTCFmotif.pth.tar -chrom 19 -offset -2000000 --genome hg38 -ct imr90
+  python ./chromafold/inference.py --data-path ./data/processed_input/ -ct imr90 --model-path ./checkpoints/chromafold_CTCFmotif.pth.tar -chrom 19 -offset -2000000 --genome hg38
   ```
   - Run inference only on regions with complete input information
   ```
-  python ./chromafold/inference.py --data-path ./data/processed_input/ -ct gcb --model-path ./checkpoints/chromafold_CTCFmotif.pth.tar -chrom 19 -offset 0 --genome hg38 -ct imr90
+  python ./chromafold/inference.py --data-path ./data/processed_input/ -ct imr90 --model-path ./checkpoints/chromafold_CTCFmotif.pth.tar -chrom 19 -offset 0 --genome hg38
   ```
   
 ## Training
@@ -80,15 +80,15 @@ b) Target data preparation
 **1. Training on 3 cell types**
   - Train model without co-accessibility component
   ```
-  python script/train_bulkOnly.py --data-path ./data/processed_input/ -ct gm12878_hg38 umb_endo imr90
+  python ./chromafold/train_bulkOnly.py --data-path ./data/processed_input/ -ct gm12878_hg38 umb_endo imr90
   ```
   - Train model with co-accessibility
   ```
-  python script/train.py --data-path ./data/processed_input/ -ct gm12878_hg38 umb_endo imr90 --mod-name bothInput
+  python ./chromafold/train.py --data-path ./data/processed_input/ -ct gm12878_hg38 umb_endo imr90 --mod-name bothInput
   ```
   - Train deterministic model for full reproducibility
   ```
-  python script/train_bulkOnly.py --data-path ./data/processed_input/ -ct gm12878_hg38 umb_endo imr90 --deterministic --mod-name deterministic
+  python ./chromafold/train_bulkOnly.py --data-path ./data/processed_input/ -ct gm12878_hg38 umb_endo imr90 --deterministic --mod-name deterministic
   ```
   
  <br/>
@@ -96,6 +96,6 @@ b) Target data preparation
 **2. Training on 1 cell type**
   - Train model on HUVEC without co-accessibility component
   ```
-  python script/train_bulkOnly.py --data-path ./data/processed_input/ -ct umb_endo
+  python ./chromafold/train_bulkOnly.py --data-path ./data/processed_input/ -ct umb_endo
   ```
 
