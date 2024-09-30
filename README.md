@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/649742908.svg)](https://doi.org/10.5281/zenodo.13862915)
+
 # ChromaFold
 
 ChromaFold is a deep learning model that enables prediction of 3D contact maps from scATAC-seq data alone, by using pseudobulk chromatin accessibility and co-accessibility from scATAC-seq as well as predicted CTCF motif tracks as input features. 
