@@ -38,8 +38,11 @@ def load_hic(data_path, ct):
     zscore_dict = pickle.load(
         open(os.path.join(data_path, "hic/{}_hic_zscore_dict.p".format(ct)), "rb")
     )
+    # qvalue_dict = pickle.load(
+    #     open(os.path.join(data_path, "hic/{}_hic_qvalue_dict.p".format(ct)), "rb")
+    # )
     qvalue_dict = pickle.load(
-        open(os.path.join(data_path, "hic/{}_hic_qvalue_dict.p".format(ct)), "rb")
+        open(os.path.join(data_path, "hic/{}_hic_zscore_dict.p".format(ct)), "rb")
     )
 
     return zscore_dict, qvalue_dict
