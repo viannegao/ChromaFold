@@ -76,7 +76,7 @@ parser.add_argument(
 parser.add_argument("--disable-cuda", action="store_true", help="Disable CUDA")
 parser.add_argument("--deterministic", action="store_true", help="cudnn deterministic")
 parser.add_argument("--mod-name", default="", help="model name")
-
+parser.add_argument("--use_chip", default="False", help="Whether to use Chip or motif score for CTCF, options = [True, False]")
 
 def main():
     args = parser.parse_args()
@@ -104,6 +104,8 @@ def main():
 
     ct_list = args.ct_list
     genome = args.genome
+
+    use_chip = args.use_chip
 
     # Verify validity of input and output paths.
     assert os.path.isdir(
@@ -223,7 +225,11 @@ def main():
         n_metacells[ct] = get_num_cells(scatac_dict[ct], dim=1)
         libsize_cell[ct] = get_libsize(pbulk_dict[ct])
 
-    ctcf_dict = load_ctcf_motif(data_path, genome)
+    # ctcf_dict = load_ctcf_motif(data_path, genome)
+    if use_chip == 'True':
+        ctcf_dict = load_ctcf_motif(data_path, ct, use_chip = True)
+    else:
+        ctcf_dict = load_ctcf_motif(data_path, genome)
 
     # Create dataset objects for training and validation
     train_dataset = Dataset(
